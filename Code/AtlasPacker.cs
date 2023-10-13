@@ -111,7 +111,8 @@ public class AtlasPacker : EditorWindow
         }
 
         // Save Atlas to .png
-        if (GUILayout.Button("Save Atlas")) { 
+        if (GUILayout.Button("Save Atlas"))
+        {
             byte[] bytes = atlas.EncodeToPNG();
             try
             {
@@ -120,8 +121,10 @@ public class AtlasPacker : EditorWindow
                 logs = "Atlas Packer: Atlas file sucessfully saved. " + bytes.Length;
             }
             catch
+            {
                 logs = "Atlas Packer: Couldn't save atlas to file.";
             }
+        }
     }
 
     void LoadTextures () {
